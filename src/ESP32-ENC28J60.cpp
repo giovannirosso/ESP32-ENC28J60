@@ -149,7 +149,7 @@ bool ENC28J60Class::begin(int MISO_GPIO, int MOSI_GPIO, int SCLK_GPIO, int CS_GP
 
     // holds a few microseconds to let DHCP start and enter into a good state
     // FIX ME -- adresses issue https://github.com/espressif/arduino-esp32/issues/5733
-    delay(50);
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
 
     return true;
 }
